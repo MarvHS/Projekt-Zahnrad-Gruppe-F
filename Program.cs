@@ -54,7 +54,7 @@ namespace ProjektZahnrad
             Console.WriteLine("Fußkreisdurchmesser: " + df);
 
             h = 2 * m + c;
-            Console.WriteLine("Kopfspiel: " + h);
+            Console.WriteLine("Zahnhöhe: " + h);
 
             ha = m;
             Console.WriteLine("Zahnkopfhöhe: " + ha);
