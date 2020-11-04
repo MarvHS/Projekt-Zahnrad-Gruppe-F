@@ -56,19 +56,19 @@ namespace ProjektZahnrad
             Console.WriteLine("Kopfkreisdurchmesser: " + Math.Round(da,3));
 
             c = 0.167 * m;
-            Console.WriteLine("Kopfspiel: " + Math.Round(c,2));
+            Console.WriteLine("Kopfspiel: " + Math.Round(c,3));
 
             df = d - 2 * (m + c);
-            Console.WriteLine("Fußkreisdurchmesser: " + Math.Round(df,2));
+            Console.WriteLine("Fußkreisdurchmesser: " + Math.Round(df,3));
 
             h = 2 * m + c;
-            Console.WriteLine("Kopfspiel: " + Math.Round(h,2));
+            Console.WriteLine("Kopfspiel: " + Math.Round(h,3));
 
             ha = m;
-            Console.WriteLine("Zahnkopfhöhe: " + Math.Round(ha,2));
+            Console.WriteLine("Zahnkopfhöhe: " + Math.Round(ha,3));
 
             hf = m + c;
-            Console.WriteLine("Zahnfußhöhe: " + Math.Round(hf,2));
+            Console.WriteLine("Zahnfußhöhe: " + Math.Round(hf,3));
 
             v = 0;
             Console.WriteLine("Volumen: " + v);
