@@ -17,7 +17,7 @@ namespace ProjektZahnrad
 
             double p, da, df, h, ha, hf, c, a;   // Deklaration der Variablen (Ausgang)            
 
-            double v, G, P;                      //Deklaration der Basisinformationen Volumen, Masse, Preis (Ausgang)
+            double v, G, P; a                      //Deklaration der Basisinformationen Volumen, Masse, Preis (Ausgang)
 
 
             Console.WriteLine("Geben Sie die Eingangsparameter für die Zahnradberechnung ein.");
