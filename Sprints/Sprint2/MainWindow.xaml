@@ -5,29 +5,75 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sprint2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Zahnrad Konfiguration" Height="591" Width="1006" Icon="/Ritzel-Zahnrad-Z17-Modul-4-Innendurchmesser-22mm-.1874a.jpg" ResizeMode="CanMinimize">
+    <Grid Margin="0,23,0,0" HorizontalAlignment="Center" Width="986" Height="542" VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock HorizontalAlignment="Left" Margin="124,73,0,0" Text="Zähnezahl:" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox x:Name="z" HorizontalAlignment="Left" Margin="201,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" RenderTransformOrigin="-0.087,-0.933"/>
-        <TextBlock HorizontalAlignment="Left" Margin="124,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Modul:" RenderTransformOrigin="-1.464,0.554"/>
-        <TextBox x:Name="m" HorizontalAlignment="Left" Margin="201,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50"/>
-        <TextBlock HorizontalAlignment="Left" Margin="124,169,0,0" Text="Teilkreisdurchmesser: " TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="261,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50"/>
-        <TextBlock HorizontalAlignment="Left" Margin="124,217,0,0" Text="Breite:" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-3.08,-0.135"/>
-        <TextBox HorizontalAlignment="Left" Margin="201,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50"/>
-        <Image HorizontalAlignment="Left" Height="116" Margin="197,24,0,0" VerticalAlignment="Top" Width="132" Source="/Ritzel-Zahnrad-Z17-Modul-4-Innendurchmesser-22mm-.1874a.jpg" Grid.Column="1"/>
-        <Image HorizontalAlignment="Left" Height="126" Margin="169,195,0,0" VerticalAlignment="Top" Width="144" Source="/Logo.PNG" Grid.Column="1"/>
-        <TextBlock x:Name="einheit" HorizontalAlignment="Left" Height="30" Margin="261,126,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" Width="76"/>
-        <TextBlock HorizontalAlignment="Left" Margin="334,169,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-1.436,-1.063"/>
-        <TextBlock HorizontalAlignment="Left" Margin="276,220,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-2.66,0.667"/>
-        <Button Content="Berechnung" HorizontalAlignment="Left" Margin="124,275,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.232,0.157" Click="Button_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="124,362,0,0" Text="Teilung:" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock x:Name="p" HorizontalAlignment="Left" Margin="190,365,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text=""/>
-        <TextBlock HorizontalAlignment="Left" Margin="202,360,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+        <TabControl Margin="30,65,0,0" Height="378" VerticalAlignment="Top" HorizontalAlignment="Left" Width="673">
+            <TabItem Header="Berechnungen">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="103*"/>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="190*"/>
+                        <ColumnDefinition Width="25*"/>
+                        <ColumnDefinition Width="247*"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <TextBlock Margin="8,47,29,194" Text="Zähnezahl (z):" TextWrapping="Wrap"/>
+                    <TextBlock Margin="8,86,47,139" TextWrapping="Wrap" Text="Modul (m):" RenderTransformOrigin="-1.464,0.554"/>
+                    <TextBlock Margin="10,120,150,121" Text="Teilkreisdurchmesser (d): " TextWrapping="Wrap" Grid.ColumnSpan="3"/>
+                    <TextBlock Margin="10,155,47,70" Text="Breite (b):" TextWrapping="Wrap" RenderTransformOrigin="-3.08,-0.135"/>
+                    <TextBox x:Name="z1" Margin="33,47,91,282" TextWrapping="Wrap" RenderTransformOrigin="-0.087,-0.933" Grid.Column="2"/>
+                    <TextBox x:Name="m1" Margin="33,84,91,245" TextWrapping="Wrap" Grid.Column="2"/>
+                    <TextBox Margin="33,118,91,213" TextWrapping="Wrap" Grid.Column="2"/>
+                    <TextBlock x:Name="einheit1" HorizontalAlignment="Left" Height="30" Margin="136,86,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" Grid.Column="2"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="136,125,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-2.66,0.667" Grid.Column="2"/>
+                    <TextBox Margin="33,153,91,177" TextWrapping="Wrap" Grid.Column="2"/>
+                    <Button x:Name="btn_Berechnen1" Content="Berechne" Grid.Column="4" Margin="0,0,10,10" Click="btn_Berechnen_Click" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="156">
+
+                        <Button.Background>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
+                        </Button.Background>
+                    </Button>
+                    <TextBox Grid.Column="4" Margin="122,48,52,285" Text="" TextWrapping="Wrap"/>
+                    <Label Content="Teilung (p):" Grid.ColumnSpan="3" Grid.Column="2" HorizontalAlignment="Left" Height="35" Margin="214,51,0,0" VerticalAlignment="Top" Width="151"/>
+                    <Label Content="Fußkreisdurchmesser (df)" Grid.ColumnSpan="3" Grid.Column="2" HorizontalAlignment="Left" Height="35" Margin="214,85,0,0" VerticalAlignment="Top" Width="151"/>
+                    <Label Content="Zahnhöhe (h):" Grid.ColumnSpan="3" Grid.Column="2" HorizontalAlignment="Left" Height="35" Margin="214,122,0,0" VerticalAlignment="Top" Width="151"/>
+                    <Label Content="Zahnkopfhöhe (ha):" Grid.ColumnSpan="3" Grid.Column="2" HorizontalAlignment="Left" Height="35" Margin="214,155,0,0" VerticalAlignment="Top" Width="151"/>
+                    <Label Content="Zahnfußhöhe (hf):" Grid.ColumnSpan="3" Grid.Column="2" HorizontalAlignment="Left" Height="35" Margin="214,195,0,0" VerticalAlignment="Top" Width="151"/>
+                    <Label Content="Kopfspiel (c):" Grid.ColumnSpan="3" Grid.Column="2" HorizontalAlignment="Left" Height="35" Margin="214,230,0,0" VerticalAlignment="Top" Width="151"/>
+                    <TextBox Grid.Column="4" Margin="122,88,52,245" Text="" TextWrapping="Wrap"/>
+                    <TextBox Grid.Column="4" Margin="122,122,52,210" Text="" TextWrapping="Wrap"/>
+                    <TextBox Grid.Column="4" Margin="122,165,52,168" Text="" TextWrapping="Wrap"/>
+                    <TextBox Grid.Column="4" Margin="122,205,52,128" Text="" TextWrapping="Wrap"/>
+                    <TextBox Grid.Column="4" Margin="122,244,52,89" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="einheit1_Copy" HorizontalAlignment="Left" Height="30" Margin="236,92,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" Grid.Column="4"/>
+                    <TextBlock x:Name="einheit1_Copy1" HorizontalAlignment="Left" Height="30" Margin="236,128,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" Grid.Column="4"/>
+                    <TextBlock x:Name="einheit1_Copy2" HorizontalAlignment="Left" Height="30" Margin="236,165,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" Grid.Column="4"/>
+                    <TextBlock x:Name="einheit1_Copy3" HorizontalAlignment="Left" Height="30" Margin="236,205,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" Grid.Column="4"/>
+                    <TextBlock x:Name="einheit1_Copy4" HorizontalAlignment="Left" Height="30" Margin="236,248,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" Grid.Column="4"/>
+
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Formeln">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+        <Image Margin="0,-18,0,0" Stretch="Fill" Source="Logo.PNG" HorizontalAlignment="Left" Width="205" Height="83" VerticalAlignment="Top"/>
+        <Image Margin="0,0,10,236" Stretch="Fill" Source="Grafik.PNG" Height="218" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="268"/>
+        <Button x:Name="btn_Ende" Content="Ende" BorderBrush="#FF722D2D" Click="btn_Ende_Click" Height="26" VerticalAlignment="Bottom" Margin="0,0,33,25" HorizontalAlignment="Right" Width="131">
+            <Button.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
+            </Button.Background>
+        </Button>
+
+
+
 
     </Grid>
 </Window>

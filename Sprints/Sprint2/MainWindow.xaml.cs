@@ -29,5 +29,15 @@ namespace Sprint2
         {
 
         }
+
+        private void btn_Ende_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void btn_Berechnen_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
