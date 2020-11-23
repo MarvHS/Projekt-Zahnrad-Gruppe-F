@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="istockphoto-937855500-612x612.jpg" />
+    <None Remove="Logo.PNG" />
+    <None Remove="Ritzel-Zahnrad-Z17-Modul-4-Innendurchmesser-22mm-.1874a.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="istockphoto-937855500-612x612.jpg" />
+    <Resource Include="Logo.PNG" />
+    <Resource Include="Ritzel-Zahnrad-Z17-Modul-4-Innendurchmesser-22mm-.1874a.jpg" />
+  </ItemGroup>
+
+</Project>
