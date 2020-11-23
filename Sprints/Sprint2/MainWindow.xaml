@@ -10,6 +10,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+
         <Grid.Background>
             <ImageBrush Stretch="Fill" ImageSource="/istockphoto-937855500-612x612.jpg" ></ImageBrush>
         </Grid.Background>
