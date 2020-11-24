@@ -67,7 +67,7 @@
                     <ComboBox Grid.Column="2" HorizontalAlignment="Left" Margin="27,196,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
                         <ComboBoxItem IsSelected="True">Metall</ComboBoxItem>
                         <ComboBoxItem>Holz</ComboBoxItem>
-                        <ComboBoxItem>Kunststoff</ComboBoxItem>
+                        <ComboBoxItem>Kunst</ComboBoxItem>
                     </ComboBox>
                     <TextBlock HorizontalAlignment="Left" Margin="136,159,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-2.66,0.667" Grid.Column="2"/>
 
