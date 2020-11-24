@@ -42,6 +42,8 @@ namespace Sprint2
             double b = Convert.ToDouble(b1.Text);
             double z = Convert.ToDouble(z1.Text);
 
+           
+
             double p = Math.PI * m;
             double c = 0.167 * m;
             double df = d - 2 * (m + c);
