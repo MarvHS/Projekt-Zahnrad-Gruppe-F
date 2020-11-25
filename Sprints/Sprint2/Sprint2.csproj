@@ -7,12 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="BildFormeln.PNG" />
+    <None Remove="Formelbild.PNG" />
     <None Remove="istockphoto-937855500-612x612.jpg" />
     <None Remove="Logo.PNG" />
     <None Remove="Ritzel-Zahnrad-Z17-Modul-4-Innendurchmesser-22mm-.1874a.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="BildFormeln.PNG" />
+    <Resource Include="Formelbild.PNG" />
     <Resource Include="istockphoto-937855500-612x612.jpg" />
     <Resource Include="Logo.PNG" />
     <Resource Include="Ritzel-Zahnrad-Z17-Modul-4-Innendurchmesser-22mm-.1874a.jpg" />
