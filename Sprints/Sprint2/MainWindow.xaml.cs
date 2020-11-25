@@ -15,41 +15,40 @@ namespace Sprint2
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
 
+
+        // Button "Ende" 
         private void btn_Ende_Click(object sender, RoutedEventArgs e)
         {
 
-            int answer = Convert.ToInt32(MessageBox.Show("Sind Sie sich sicher, dass Sie das Programm beenden wollen?","Ende", MessageBoxButton.YesNo, MessageBoxImage.Warning));
-           
+            int answer = Convert.ToInt32(MessageBox.Show("Sind Sie sich sicher, dass Sie das Programm beenden wollen?",
+                "Ende", MessageBoxButton.YesNo, MessageBoxImage.Warning));
 
-             if (answer == 6)
-             Application.Current.Shutdown();
-               
+
+            if (answer == 6)
+                Application.Current.Shutdown();
+
         }
 
+        //Button "Berechne"
         private void btn_Berechnen_Click(object sender, RoutedEventArgs e)
         {
-
-            
-           
-            double d_test = Convert.ToDouble(d1.Text);
+            // Einlesen von Eingabefeldern
+            double d_test = Convert.ToDouble(d1.Text);                        
             double b_test = Convert.ToDouble(b1.Text);
             double z_m_test = Convert.ToDouble(z1_m1.Text);
 
 
-
-            if (z_m_test <= 0 )
+            // Kontrolle auf Zahlen größer Null
+            if (z_m_test <= 0)
             {
                 MessageBox.Show("Der Wert 'z' muss größer Null sein!", "Ungültige Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
                 z1_m1.Focus();
                 z1_m1.SelectAll();
             }
 
-           
+
             else if (d_test <= 0)
             {
                 MessageBox.Show("Der Wert 'd' muss größer Null sein!", "Ungültige Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -67,10 +66,11 @@ namespace Sprint2
 
             else
             {
-                
+                // Auswahl zwischen Modul und Zähnezahl
+             int Auswahl = Convert.ToInt32(MessageBox.Show("Möchten Sie für die nachfolgenden Rechnungen den Modul verwenden? Wählen Sie Nein wird mit der Zähnezahl weitergerechnet", "Auswahl", MessageBoxButton.YesNo, MessageBoxImage.Question));
 
-               int Auswahl =Convert.ToInt32( MessageBox.Show("Möchten Sie für die nachfolgenden Rechnungen den Modul verwenden? Wählen Sie Nein wird mit der Zähnezahl weitergerechnet", "Auswahl", MessageBoxButton.YesNo, MessageBoxImage.Question));
 
+                // Rechnungen mit dem Modul
                 if (Auswahl == 6)
                 {
 
@@ -95,6 +95,8 @@ namespace Sprint2
                     ha1.Text = Convert.ToString(ha);
                     da1.Text = Convert.ToString(da);
                 }
+
+                // Rechnungen mit der Zähnezahl
                 else
                 {
 
@@ -103,13 +105,13 @@ namespace Sprint2
                     double b = b_test;
 
 
-                    double p = Math.Round(d/z * Math.PI);
-                    double c = Math.Round(0.167 * (d/z), 3);
-                    double df = Math.Round(d - 2 * ((d/z) + c), 3);
-                    double hf = Math.Round((d/z) + c, 3);
-                    double h = Math.Round(2 * (d/z) + c, 3);
-                    double ha = Math.Round((d/z), 3);
-                    double da = Math.Round(d + 2 * (d/z), 3);
+                    double p = Math.Round(d / z * Math.PI);
+                    double c = Math.Round(0.167 * (d / z), 3);
+                    double df = Math.Round(d - 2 * ((d / z) + c), 3);
+                    double hf = Math.Round((d / z) + c, 3);
+                    double h = Math.Round(2 * (d / z) + c, 3);
+                    double ha = Math.Round((d / z), 3);
+                    double da = Math.Round(d + 2 * (d / z), 3);
 
                     p1.Text = Convert.ToString(p);
                     df1.Text = Convert.ToString(df);
@@ -120,12 +122,12 @@ namespace Sprint2
                     da1.Text = Convert.ToString(da);
                 }
             }
-            
+
         }
 
         private void p1_TextChanged(object sender, TextChangedEventArgs e)
         {
-           
+
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -135,7 +137,7 @@ namespace Sprint2
 
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
         {
-           
+
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -145,18 +147,22 @@ namespace Sprint2
 
         private void z1_KeyDown(object sender, KeyEventArgs e)
         {
-           
+
         }
 
         private void z1_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
+
 
         }
 
         private void txtblock_Zähnezahl_MouseEnter(object sender, MouseEventArgs e)
         {
-            
+
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

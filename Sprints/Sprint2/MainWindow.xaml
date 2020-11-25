@@ -69,7 +69,7 @@
                         <ComboBoxItem>Kunst</ComboBoxItem>
                     </ComboBox>
                     <TextBlock HorizontalAlignment="Left" Margin="157,122,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-2.66,0.667" Grid.Column="4"/>
-                    <Label Content="Zahnradkonfigurator" Grid.ColumnSpan="5" HorizontalAlignment="Left" Height="50" Margin="7,10,0,0" VerticalAlignment="Top" Width="157" FontWeight="Bold" FontStyle="Normal" FontFamily="Arial Black"/>
+                    <Label x:Name="lbl_Überschrift" Content="Zahnradkonfigurator" Grid.ColumnSpan="5" HorizontalAlignment="Left" Height="50" Margin="7,10,0,0" VerticalAlignment="Top" Width="157" FontWeight="Bold" FontStyle="Normal" FontFamily="Arial Black"/>
 
                 </Grid>
 
