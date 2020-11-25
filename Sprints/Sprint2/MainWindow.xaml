@@ -15,61 +15,61 @@
             <ImageBrush Stretch="Fill" ImageSource="/istockphoto-937855500-612x612.jpg" ></ImageBrush>
         </Grid.Background>
 
-        <TabControl Margin="30,65,0,0" Height="378" VerticalAlignment="Top" HorizontalAlignment="Left" Width="673">
+        <TabControl Margin="146,0,0,0" Height="378" VerticalAlignment="Center" HorizontalAlignment="Left" Width="673">
             <TabItem Header="Berechnungen">
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="103*"/>
+                        <ColumnDefinition Width="100*"/>
                         <ColumnDefinition Width="8*"/>
-                        <ColumnDefinition Width="190*"/>
-                        <ColumnDefinition Width="25*"/>
-                        <ColumnDefinition Width="247*"/>
+                        <ColumnDefinition Width="12*"/>
+                        <ColumnDefinition Width="9*"/>
+                        <ColumnDefinition Width="221*"/>
+                        <ColumnDefinition Width="29*"/>
+                        <ColumnDefinition Width="288*"/>
                     </Grid.ColumnDefinitions>
 
 
-                    <TextBlock Margin="8,47,29,194" Text="Zähnezahl (z):" TextWrapping="Wrap"/>
-                    <TextBlock Margin="8,86,47,139" TextWrapping="Wrap" Text="Modul (m):" RenderTransformOrigin="-1.464,0.554"/>
-                    <TextBlock Margin="10,120,150,121" Text="Teilkreisdurchmesser (d): " TextWrapping="Wrap" Grid.ColumnSpan="3"/>
-                    <TextBlock Margin="10,155,47,70" Text="Breite (b):" TextWrapping="Wrap" RenderTransformOrigin="-3.08,-0.135"/>
-                    <TextBox x:Name="z1" Margin="33,47,91,282" TextWrapping="Wrap" RenderTransformOrigin="-0.087,-0.933" Grid.Column="2" Text="0"/>
-                    <TextBox x:Name="m1" Margin="33,84,91,245" TextWrapping="Wrap" Grid.Column="2" Text="0,0"/>
-                    <TextBox x:Name="d1"  Margin="33,118,91,213" TextWrapping="Wrap" Grid.Column="2" Text="0,0"/>
-                    <TextBlock x:Name="einheit1" HorizontalAlignment="Left" Height="30" Margin="136,86,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" Grid.Column="2"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="136,125,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-2.66,0.667" Grid.Column="2"/>
-                    <TextBox x:Name="b1"  Margin="33,153,91,177" TextWrapping="Wrap" Grid.Column="2" Text="0,0"/>
-                    <Button x:Name="btn_Berechnen1" Content="Berechne" Grid.Column="4" Margin="0,0,10,10" Click="btn_Berechnen_Click" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="156">
+                    <TextBlock x:Name="txtblock_Zähnezahl" Margin="10,50,64,279" Text="Zähnezahl(z) oder Modul(m):" TextWrapping="Wrap" MouseEnter="txtblock_Zähnezahl_MouseEnter" Grid.ColumnSpan="5"/>
+                    <TextBlock x:Name="txtblock_Teilkreisdurchmesser" Margin="10,85,209,206" Text="Teilkreisdurchmesser (d): " TextWrapping="Wrap" Grid.ColumnSpan="5"/>
+                    <TextBlock x:Name="txtblock_Breite" Margin="10,120,0,0" Text="Breite (b):" TextWrapping="Wrap" RenderTransformOrigin="-3.08,-0.135" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="63"/>
+                    <TextBox x:Name="z1_m1" Margin="57,50,64,280" TextWrapping="Wrap" RenderTransformOrigin="-0.087,-0.933" Grid.Column="4" Text="0" TextChanged="z1_TextChanged" Width="100" Height="20"/>
+                    <TextBox x:Name="d1"  Margin="57,85,0,0" TextWrapping="Wrap" Grid.Column="4" Text="0" Width="100" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="157,85,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-2.66,0.667" Grid.Column="4"/>
+                    <TextBox x:Name="b1"  Margin="57,120,0,0" TextWrapping="Wrap" Grid.Column="4" Text="0" Width="100" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                    <Button x:Name="btn_Berechnen1" Content="Berechne" Grid.Column="6" Margin="0,0,10,10" Click="btn_Berechnen_Click" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="156">
 
                         <Button.Background>
                             <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
                         </Button.Background>
                     </Button>
-                    <TextBox x:Name="p1" Grid.Column="4" Margin="122,48,52,285" Text="" TextWrapping="Wrap" TextChanged="p1_TextChanged"/>
-                    <Label Content="Teilung (p):" Grid.ColumnSpan="3" Grid.Column="2" HorizontalAlignment="Left" Height="35" Margin="214,51,0,0" VerticalAlignment="Top" Width="151"/>
-                    <Label Content="Fußkreisdurchmesser (df)" Grid.ColumnSpan="3" Grid.Column="2" HorizontalAlignment="Left" Height="35" Margin="214,85,0,0" VerticalAlignment="Top" Width="151"/>
-                    <Label Content="Zahnhöhe (h):" Grid.ColumnSpan="3" Grid.Column="2" HorizontalAlignment="Left" Height="35" Margin="214,122,0,0" VerticalAlignment="Top" Width="151"/>
-                    <Label Content="Zahnkopfhöhe (ha):" Grid.ColumnSpan="3" Grid.Column="2" HorizontalAlignment="Left" Height="35" Margin="214,155,0,0" VerticalAlignment="Top" Width="151"/>
-                    <Label Content="Zahnfußhöhe (hf):" Grid.ColumnSpan="3" Grid.Column="2" HorizontalAlignment="Left" Height="35" Margin="214,195,0,0" VerticalAlignment="Top" Width="151"/>
-                    <Label Content="Kopfspiel (c):" Grid.ColumnSpan="3" Grid.Column="2" HorizontalAlignment="Left" Height="35" Margin="214,235,0,0" VerticalAlignment="Top" Width="151"/>
-                    <TextBox x:Name="df1"  Grid.Column="4" Margin="122,88,52,245" Text="" TextWrapping="Wrap"/>
-                    <TextBox x:Name="h1"  Grid.Column="4" Margin="122,122,52,210" Text="" TextWrapping="Wrap" TextChanged="TextBox_TextChanged"/>
-                    <TextBox x:Name="ha1" Grid.Column="4" Margin="122,165,52,168" Text="" TextWrapping="Wrap" TextChanged="TextBox_TextChanged_1"/>
-                    <TextBox x:Name="hf1" Grid.Column="4" Margin="122,205,52,128" Text="" TextWrapping="Wrap"/>
-                    <TextBox x:Name="c1" Grid.Column="4" Margin="122,244,52,89" TextWrapping="Wrap"/>
-                    <TextBlock x:Name="einheit1_Copy" HorizontalAlignment="Left" Height="30" Margin="236,92,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" Grid.Column="4"/>
-                    <TextBlock x:Name="einheit1_Copy1" HorizontalAlignment="Left" Height="30" Margin="236,128,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" Grid.Column="4"/>
-                    <TextBlock x:Name="einheit1_Copy2" HorizontalAlignment="Left" Height="30" Margin="236,165,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" Grid.Column="4"/>
-                    <TextBlock x:Name="einheit1_Copy3" HorizontalAlignment="Left" Height="30" Margin="236,205,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" Grid.Column="4"/>
-                    <TextBlock x:Name="einheit1_Copy4" HorizontalAlignment="Left" Height="30" Margin="236,248,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" Grid.Column="4"/>
-                    <TextBox x:Name="da1" Grid.Column="4" Margin="122,278,52,55" TextWrapping="Wrap"/>
-                    <TextBlock x:Name="einheit1_Copy5" HorizontalAlignment="Left" Height="30" Margin="236,282,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" Grid.Column="4"/>
-                    <Label Content="Kopfkreisdurchmesser:" Grid.ColumnSpan="3" Grid.Column="2" HorizontalAlignment="Left" Height="35" Margin="214,269,0,0" VerticalAlignment="Top" Width="151"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="8,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Material"/><Run Text=":"/><LineBreak/></TextBlock>
-                    <ComboBox Grid.Column="2" HorizontalAlignment="Left" Margin="27,196,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
+                    <TextBox x:Name="p1" Grid.Column="6" Margin="0,51,60,279" Text="" TextWrapping="Wrap" TextChanged="p1_TextChanged" IsEnabled="False" Width="100" HorizontalAlignment="Right" Height="20"/>
+                    <Label x:Name="txtblock_Teilung" Content="Teilung (p):" Grid.ColumnSpan="3" Grid.Column="4" HorizontalAlignment="Left" Height="35" Margin="214,50,0,0" VerticalAlignment="Top" Width="151"/>
+                    <Label x:Name="txtblock_Fußkreisdurchmesser" Content="Fußkreisdurchmesser (df)" Grid.ColumnSpan="3" Grid.Column="4" HorizontalAlignment="Left" Height="35" Margin="214,85,0,0" VerticalAlignment="Top" Width="151"/>
+                    <Label x:Name="txtblock_Zahnhöhe" Content="Zahnhöhe (h):" Grid.ColumnSpan="3" Grid.Column="4" HorizontalAlignment="Left" Height="35" Margin="214,120,0,0" VerticalAlignment="Top" Width="151"/>
+                    <Label x:Name="txtblock_Zahnkopfhöhe" Content="Zahnkopfhöhe (ha):" Grid.ColumnSpan="3" Grid.Column="4" HorizontalAlignment="Left" Height="35" Margin="214,155,0,0" VerticalAlignment="Top" Width="151"/>
+                    <Label x:Name="txtblock_Zahnfußhöhe" Content="Zahnfußhöhe (hf):" Grid.ColumnSpan="3" Grid.Column="4" HorizontalAlignment="Left" Height="35" Margin="214,190,0,0" VerticalAlignment="Top" Width="151"/>
+                    <Label x:Name="txtblock_Kopfspiel" Content="Kopfspiel (c):" Grid.ColumnSpan="3" Grid.Column="4" HorizontalAlignment="Left" Height="35" Margin="214,225,0,0" VerticalAlignment="Top" Width="151"/>
+                    <TextBox x:Name="df1"  Grid.Column="6" Margin="0,85,60,0" Text="" TextWrapping="Wrap" IsEnabled="False" Width="100" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                    <TextBox x:Name="h1"  Grid.Column="6" Margin="0,120,60,0" Text="" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" IsEnabled="False" Width="100" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                    <TextBox x:Name="ha1" Grid.Column="6" Margin="0,155,60,0" Text="" TextWrapping="Wrap" TextChanged="TextBox_TextChanged_1" IsEnabled="False" Width="100" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                    <TextBox x:Name="hf1" Grid.Column="6" Margin="0,190,60,0" Text="" TextWrapping="Wrap" IsEnabled="False" Height="20" HorizontalAlignment="Right" Width="100" VerticalAlignment="Top"/>
+                    <TextBox x:Name="c1" Grid.Column="6" Margin="0,225,60,0" TextWrapping="Wrap" IsEnabled="False" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100"/>
+                    <TextBlock x:Name="einheit1_Copy" Height="30" Margin="0,85,-25,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="6" HorizontalAlignment="Right" Width="76"/>
+                    <TextBlock x:Name="einheit1_Copy1" Height="30" Margin="0,120,-25,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="6" HorizontalAlignment="Right" Width="76"/>
+                    <TextBlock x:Name="einheit1_Copy2" Height="30" Margin="0,155,-25,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="6" HorizontalAlignment="Right" Width="76"/>
+                    <TextBlock x:Name="einheit1_Copy3" Height="30" Margin="0,190,-25,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="6" HorizontalAlignment="Right" Width="76"/>
+                    <TextBlock x:Name="einheit1_Copy4" HorizontalAlignment="Right" Height="30" Margin="0,225,-25,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" Grid.Column="6"/>
+                    <TextBox x:Name="da1" Grid.Column="6" Margin="0,260,60,0" TextWrapping="Wrap" IsEnabled="False" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100"/>
+                    <TextBlock x:Name="einheit1_Copy5" HorizontalAlignment="Right" Height="30" Margin="0,260,-25,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" Grid.Column="6"/>
+                    <Label x:Name="textblock_Kopfkreisdurchmesser" Content="Kopfkreisdurchmesser(da):" Grid.ColumnSpan="3" Grid.Column="4" HorizontalAlignment="Left" Height="35" Margin="214,260,0,0" VerticalAlignment="Top" Width="151"/>
+                    <TextBlock x:Name="textblock_Material" HorizontalAlignment="Left" Margin="8,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23"><Run Text="Material"/><Run Text=":"/><LineBreak/></TextBlock>
+                    <ComboBox Grid.Column="4" HorizontalAlignment="Center" Margin="0,186,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
                         <ComboBoxItem IsSelected="True">Metall</ComboBoxItem>
                         <ComboBoxItem>Holz</ComboBoxItem>
                         <ComboBoxItem>Kunst</ComboBoxItem>
                     </ComboBox>
-                    <TextBlock HorizontalAlignment="Left" Margin="136,159,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-2.66,0.667" Grid.Column="2"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="157,122,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-2.66,0.667" Grid.Column="4"/>
+                    <Label Content="Zahnradkonfigurator" Grid.ColumnSpan="5" HorizontalAlignment="Left" Height="50" Margin="7,10,0,0" VerticalAlignment="Top" Width="157" FontWeight="Bold" FontStyle="Normal" FontFamily="Arial Black"/>
 
                 </Grid>
 
@@ -78,10 +78,11 @@
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="49*"/>
-                        <ColumnDefinition Width="618*"/>
+                        <ColumnDefinition Width="13*"/>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="597*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock HorizontalAlignment="Left" Margin="43,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2"><Run Language="de-de" Text="Formel"/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="57,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"><Run Language="de-de" Text="M/A"/></TextBlock>
+                    <Label Content="Verwendete Formeln" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="151" FontWeight="Bold" Grid.ColumnSpan="4" FontFamily="Arial Black"/>
                 </Grid>
             </TabItem>
         </TabControl>
