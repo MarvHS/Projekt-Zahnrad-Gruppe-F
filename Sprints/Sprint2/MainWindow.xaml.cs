@@ -125,6 +125,7 @@ namespace Sprint2
 
         }
 
+<<<<<<< Updated upstream
         private void p1_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -164,5 +165,7 @@ namespace Sprint2
         {
 
         }
+=======
+>>>>>>> Stashed changes
     }
 }
