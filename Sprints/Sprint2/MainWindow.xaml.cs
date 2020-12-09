@@ -67,7 +67,8 @@ namespace Sprint2
             else
             {
                 // Auswahl zwischen Modul und Zähnezahl
-             int Auswahl = Convert.ToInt32(MessageBox.Show("Möchten Sie für die nachfolgenden Rechnungen den Modul verwenden? Wählen Sie Nein wird mit der Zähnezahl weitergerechnet", "Auswahl", MessageBoxButton.YesNo, MessageBoxImage.Question));
+             int Auswahl = Convert.ToInt32(MessageBox.Show("Möchten Sie für die nachfolgenden Rechnungen den Modul verwenden? Wählen Sie Nein wird mit der Zähnezahl weitergerechnet",
+                 "Auswahl", MessageBoxButton.YesNo, MessageBoxImage.Question));
 
 
                 // Rechnungen mit dem Modul
@@ -125,7 +126,7 @@ namespace Sprint2
 
         }
 
-<<<<<<< Updated upstream
+
         private void p1_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -165,7 +166,6 @@ namespace Sprint2
         {
 
         }
-=======
->>>>>>> Stashed changes
+
     }
 }

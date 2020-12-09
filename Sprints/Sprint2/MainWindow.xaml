@@ -83,7 +83,7 @@
                         <ColumnDefinition Width="597*"/>
                     </Grid.ColumnDefinitions>
                     <Label Content="Verwendete Formeln" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="151" FontWeight="Bold" Grid.ColumnSpan="4" FontFamily="Arial Black"/>
-                    <Image Grid.Column="3" HorizontalAlignment="Left" Height="177" Margin="2,0,0,0" VerticalAlignment="Center" Width="532" Source="/BildFormeln.PNG"/>
+                    <Image HorizontalAlignment="Left" Height="300" Margin="10,0,0,0" VerticalAlignment="Center" Width="629" Source="/BildFormeln.PNG" Grid.ColumnSpan="4"/>
                 </Grid>
             </TabItem>
         </TabControl>
