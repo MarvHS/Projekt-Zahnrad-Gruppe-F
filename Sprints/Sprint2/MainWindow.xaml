@@ -15,7 +15,7 @@
             <ImageBrush Stretch="Fill" ImageSource="/istockphoto-937855500-612x612.jpg" ></ImageBrush>
         </Grid.Background>
 
-        <TabControl Margin="146,0,0,0" Height="378" VerticalAlignment="Center" HorizontalAlignment="Left" Width="673">
+        <TabControl Margin="146,0,0,0" Height="416" VerticalAlignment="Center" HorizontalAlignment="Left" Width="673">
             <TabItem Header="Berechnungen">
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
@@ -29,10 +29,10 @@
                     </Grid.ColumnDefinitions>
 
 
-                    <TextBlock x:Name="txtblock_Zähnezahl" Margin="10,50,64,279" Text="Zähnezahl(z) oder Modul(m):" TextWrapping="Wrap" MouseEnter="txtblock_Zähnezahl_MouseEnter" Grid.ColumnSpan="5"/>
+                    <TextBlock x:Name="txtblock_Zähnezahl" Margin="10,50,64,279" TextWrapping="Wrap" MouseEnter="txtblock_Zähnezahl_MouseEnter" Grid.ColumnSpan="5"><Run Text="Zähnezahl(z)"/><Run Language="de-de" Text=":"/></TextBlock>
                     <TextBlock x:Name="txtblock_Teilkreisdurchmesser" Margin="10,85,209,206" Text="Teilkreisdurchmesser (d): " TextWrapping="Wrap" Grid.ColumnSpan="5"/>
                     <TextBlock x:Name="txtblock_Breite" Margin="10,120,0,0" Text="Breite (b):" TextWrapping="Wrap" RenderTransformOrigin="-3.08,-0.135" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="63"/>
-                    <TextBox x:Name="z1_m1" Margin="57,50,64,280" TextWrapping="Wrap" RenderTransformOrigin="-0.087,-0.933" Grid.Column="4" Text="0" TextChanged="z1_TextChanged" Width="100" Height="20"/>
+                    <TextBox x:Name="z1" Margin="0,50,64,0" TextWrapping="Wrap" RenderTransformOrigin="-0.087,-0.933" Grid.Column="4" Text="0" TextChanged="z1_TextChanged" Width="100" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right"/>
                     <TextBox x:Name="d1"  Margin="57,85,0,0" TextWrapping="Wrap" Grid.Column="4" Text="0" Width="100" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                     <TextBlock HorizontalAlignment="Left" Margin="157,85,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-2.66,0.667" Grid.Column="4"/>
                     <TextBox x:Name="b1"  Margin="57,120,0,0" TextWrapping="Wrap" Grid.Column="4" Text="0" Width="100" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left"/>
@@ -42,7 +42,7 @@
                             <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
                         </Button.Background>
                     </Button>
-                    <TextBox x:Name="p1" Grid.Column="6" Margin="0,51,60,279" Text="" TextWrapping="Wrap" TextChanged="p1_TextChanged" IsEnabled="False" Width="100" HorizontalAlignment="Right" Height="20"/>
+                    <TextBox x:Name="p1" Grid.Column="6" Margin="0,51,60,0" Text="" TextWrapping="Wrap" TextChanged="p1_TextChanged" IsEnabled="False" Width="100" HorizontalAlignment="Right" Height="20" VerticalAlignment="Top"/>
                     <Label x:Name="txtblock_Teilung" Content="Teilung (p):" Grid.ColumnSpan="3" Grid.Column="4" HorizontalAlignment="Left" Height="35" Margin="214,50,0,0" VerticalAlignment="Top" Width="151"/>
                     <Label x:Name="txtblock_Fußkreisdurchmesser" Content="Fußkreisdurchmesser (df)" Grid.ColumnSpan="3" Grid.Column="4" HorizontalAlignment="Left" Height="35" Margin="214,85,0,0" VerticalAlignment="Top" Width="151"/>
                     <Label x:Name="txtblock_Zahnhöhe" Content="Zahnhöhe (h):" Grid.ColumnSpan="3" Grid.Column="4" HorizontalAlignment="Left" Height="35" Margin="214,120,0,0" VerticalAlignment="Top" Width="151"/>
@@ -70,6 +70,13 @@
                     </ComboBox>
                     <TextBlock HorizontalAlignment="Left" Margin="157,122,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-2.66,0.667" Grid.Column="4"/>
                     <Label x:Name="lbl_Überschrift" Content="Zahnradkonfigurator" Grid.ColumnSpan="5" HorizontalAlignment="Left" Height="50" Margin="7,10,0,0" VerticalAlignment="Top" Width="157" FontWeight="Bold" FontStyle="Normal" FontFamily="Arial Black"/>
+                    <Button x:Name="btn_Catia" Content="Catia" Grid.Column="4" Margin="0,0,181,10" Grid.ColumnSpan="3" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="btn_Catia_Click">
+                        <Button.Background>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
+                        </Button.Background>
+                    </Button>
+                    <Label x:Name="textblock_Kopfkreisdurchmesser_Copy" Content="Modul(m):" Grid.ColumnSpan="3" Grid.Column="4" HorizontalAlignment="Left" Height="35" Margin="214,295,0,0" VerticalAlignment="Top" Width="151"/>
+                    <TextBox x:Name="m1" Grid.Column="6" Margin="0,302,60,0" TextWrapping="Wrap" IsEnabled="False" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100"/>
 
                 </Grid>
 
@@ -93,6 +100,7 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
             </Button.Background>
         </Button>
+        <TextBox HorizontalAlignment="Left" Margin="1064,329,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
 
 

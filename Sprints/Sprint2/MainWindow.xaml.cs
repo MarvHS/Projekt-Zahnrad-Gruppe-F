@@ -13,6 +13,7 @@ namespace Sprint2
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
 
@@ -35,17 +36,17 @@ namespace Sprint2
         private void btn_Berechnen_Click(object sender, RoutedEventArgs e)
         {
             // Einlesen von Eingabefeldern
-            double d_test = Convert.ToDouble(d1.Text);                        
+            double d_test = Convert.ToDouble(d1.Text);
             double b_test = Convert.ToDouble(b1.Text);
-            double z_m_test = Convert.ToDouble(z1_m1.Text);
+            double z_test = Convert.ToDouble(z1.Text);
 
 
             // Kontrolle auf Zahlen größer Null
-            if (z_m_test <= 0)
+            if (z_test <= 0)
             {
                 MessageBox.Show("Der Wert 'z' muss größer Null sein!", "Ungültige Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
-                z1_m1.Focus();
-                z1_m1.SelectAll();
+                z1.Focus();
+                z1.SelectAll();
             }
 
 
@@ -66,42 +67,11 @@ namespace Sprint2
 
             else
             {
-                // Auswahl zwischen Modul und Zähnezahl
-             int Auswahl = Convert.ToInt32(MessageBox.Show("Möchten Sie für die nachfolgenden Rechnungen den Modul verwenden? Wählen Sie Nein wird mit der Zähnezahl weitergerechnet",
-                 "Auswahl", MessageBoxButton.YesNo, MessageBoxImage.Question));
+                     
+                
+                
 
-
-                // Rechnungen mit dem Modul
-                if (Auswahl == 6)
-                {
-
-                    double m = z_m_test;
-                    double d = d_test;
-                    double b = b_test;
-
-
-                    double p = Math.Round(Math.PI * m, 3);
-                    double c = Math.Round(0.167 * m, 3);
-                    double df = Math.Round(d - 2 * (m + c), 3);
-                    double hf = Math.Round(m + c, 3);
-                    double h = Math.Round(2 * m + c, 3);
-                    double ha = Math.Round(m, 3);
-                    double da = Math.Round(d + 2 * m, 3);
-
-                    p1.Text = Convert.ToString(p);
-                    df1.Text = Convert.ToString(df);
-                    c1.Text = Convert.ToString(c);
-                    hf1.Text = Convert.ToString(hf);
-                    h1.Text = Convert.ToString(h);
-                    ha1.Text = Convert.ToString(ha);
-                    da1.Text = Convert.ToString(da);
-                }
-
-                // Rechnungen mit der Zähnezahl
-                else
-                {
-
-                    double z = z_m_test;
+                    double z = z_test;
                     double d = d_test;
                     double b = b_test;
 
@@ -113,6 +83,7 @@ namespace Sprint2
                     double h = Math.Round(2 * (d / z) + c, 3);
                     double ha = Math.Round((d / z), 3);
                     double da = Math.Round(d + 2 * (d / z), 3);
+                    double m = Math.Round(d / z);
 
                     p1.Text = Convert.ToString(p);
                     df1.Text = Convert.ToString(df);
@@ -121,7 +92,8 @@ namespace Sprint2
                     h1.Text = Convert.ToString(h);
                     ha1.Text = Convert.ToString(ha);
                     da1.Text = Convert.ToString(da);
-                }
+                    m1.Text = Convert.ToString(m);
+                
             }
 
         }
@@ -167,5 +139,20 @@ namespace Sprint2
 
         }
 
-    }
-}
+        private void btn_Catia_Click(object sender, RoutedEventArgs e)
+        {
+
+            new CatiaObj();
+
+        }
+        }
+            
+
+        
+        
+
+    }  
+        
+            
+   
+
