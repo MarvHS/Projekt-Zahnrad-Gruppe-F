@@ -3,14 +3,30 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-
 namespace Sprint2
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : System.Windows.Window
     {
+
+        INFITF.Application hsp_catiaApp;
+        MECMOD.PartDocument hsp_catiaPart;
+        MECMOD.Sketch hsp_catiaProfil;
+
+        double z;
+        double d;
+        double b;
+        double p;
+        double c;
+        double df;
+        double hf;
+        double h;
+        double ha;
+        double da;
+        double m;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -68,23 +84,19 @@ namespace Sprint2
 
             else
             {
-                     
-                
-                
-
-                    double z = z_test;
-                    double d = d_test;
-                    double b = b_test;
+                    z = z_test;
+                    d = d_test;
+                    b = b_test;
 
 
-                    double p = Math.Round(d / z * Math.PI);
-                    double c = Math.Round(0.167 * (d / z), 3);
-                    double df = Math.Round(d - 2 * ((d / z) + c), 3);
-                    double hf = Math.Round((d / z) + c, 3);
-                    double h = Math.Round(2 * (d / z) + c, 3);
-                    double ha = Math.Round((d / z), 3);
-                    double da = Math.Round(d + 2 * (d / z), 3);
-                    double m = Math.Round(d / z);
+                    p = Math.Round(d / z * Math.PI);
+                    c = Math.Round(0.167 * (d / z), 3);
+                    df = Math.Round(d - 2 * ((d / z) + c), 3);
+                    hf = Math.Round((d / z) + c, 3);
+                    h = Math.Round(2 * (d / z) + c, 3);
+                    ha = Math.Round((d / z), 3);
+                    da = Math.Round(d + 2 * (d / z), 3);
+                    m = Math.Round(d / z);
 
                     p1.Text = Convert.ToString(p);
                     df1.Text = Convert.ToString(df);
@@ -142,11 +154,7 @@ namespace Sprint2
 
         private void btn_Catia_Click(object sender, RoutedEventArgs e)
         {
-
-            CatiaConnection catia = new CatiaConnection();
-            catia.ErstelleLeereSkizze();
-            catia.ErzeugeBalken(5);
-
+            CatiaObj c = new CatiaObj((int)z, b);
         }
         }
             

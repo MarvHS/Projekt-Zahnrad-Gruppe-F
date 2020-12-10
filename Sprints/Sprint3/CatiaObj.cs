@@ -10,7 +10,7 @@ namespace Sprint2
 {
     public class CatiaObj
     {
-        public CatiaObj()
+        public CatiaObj(int z, double b)
         {
             try
             {
@@ -31,24 +31,24 @@ namespace Sprint2
                     Console.WriteLine("2");
 
                     // Generiere ein Profil
-                    cc.ErzeugeProfil(20, 10);
-                    Console.WriteLine("3");
+                    //cc.ErzeugeProfil(20, 10);
+                    //Console.WriteLine("3");
 
                     // Extrudiere Balken
-                    cc.ErzeugeBalken(300);
-                    Console.WriteLine("4");
+                    //cc.ErzeugeBalken(300);
+                    //Console.WriteLine("4");
+                    cc.ErzeugeZahnrad(z, b);
                 }
                 else
                 {
                     Console.WriteLine("Laufende Catia Application nicht gefunden");
+                    MessageBox.Show("Laufende Catia Application nicht gefunden");
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Exception aufgetreten");
             }
-            Console.WriteLine("Fertig - Taste drücken.");
-            Console.ReadKey();
 
         }
 

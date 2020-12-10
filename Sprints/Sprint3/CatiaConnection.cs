@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Windows;
+using ProductStructureTypeLib;
+using KnowledgewareTypeLib;
+using HybridShapeTypeLib;
 using INFITF;
 using MECMOD;
 using PARTITF;
@@ -128,5 +131,36 @@ namespace Sprint2
             hsp_catiaPart.Part.Update();
         }
 
+
+        public void ErzeugeZahnrad(int Zaehnezahl, double Dicke)
+        {
+            ShapeFactory SF = (ShapeFactory)hsp_catiaPart.Part.ShapeFactory;
+            HybridShapeFactory HSF = (HybridShapeFactory)hsp_catiaPart.Part.HybridShapeFactory; Part myPart = hsp_catiaPart.Part;
+            Factory2D Factory2D1 = hsp_catiaProfil.Factory2D;
+            HybridShapePointCoord Ursprung = HSF.AddNewPointCoord(0, 0, 0);
+            Reference RefUrsprung = myPart.CreateReferenceFromObject(Ursprung);
+            HybridShapeDirection XDir = HSF.AddNewDirectionByCoord(1, 0, 0);
+            Reference RefXDir = myPart.CreateReferenceFromObject(XDir); 
+            CircPattern Kreismuster = SF.AddNewSurfacicCircPattern(Factory2D1, 1, 2, 0, 0, 1, 1, RefUrsprung, RefXDir, false, 0, true, false);
+            Kreismuster.CircularPatternParameters = CatCircularPatternParameters.catInstancesandAngularSpacing;
+            AngularRepartition angularRepartition1 = Kreismuster.AngularRepartition;
+            Angle angle1 = angularRepartition1.AngularSpacing;
+            angle1.Value = Convert.ToDouble(360 / Convert.ToDouble(Zaehnezahl));
+            AngularRepartition angularRepartition2 = Kreismuster.AngularRepartition;
+            IntParam intParam1 = angularRepartition2.InstancesCount;
+            intParam1.Value = Convert.ToInt32(Zaehnezahl) + 1;
+            Reference Ref_Kreismuster = myPart.CreateReferenceFromObject(Kreismuster);
+            HybridShapeAssemble Verbindung = HSF.AddNewJoin(Ref_Kreismuster, Ref_Kreismuster); Reference Ref_Verbindung = myPart.CreateReferenceFromObject(Verbindung);
+            HSF.GSMVisibility(Ref_Verbindung, 0);
+            myPart.Update();
+            Bodies bodies = myPart.Bodies;
+            Body myBody = bodies.Add();
+            myBody.set_Name("Zahnrad");
+            myBody.InsertHybridShape(Verbindung);
+            myPart.Update();
+            myPart.InWorkObject = myBody;
+            Pad myPad = SF.AddNewPadFromRef(Ref_Verbindung, Dicke);
+            myPart.Update();
+        }
     }
 }
