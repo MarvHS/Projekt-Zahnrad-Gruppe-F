@@ -53,7 +53,7 @@ namespace Sprint2
                     "Fehler", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
-            catHybridBody1.set_Name("Profile");
+            catHybridBody1.set_Name("Profil");
             // neue Skizze im ausgewaehlten geometrischen Set anlegen
             Sketches catSketches1 = catHybridBody1.HybridSketches;
             OriginElements catOriginElements = hsp_catiaPart.Part.OriginElements;
@@ -75,7 +75,7 @@ namespace Sprint2
             hsp_catiaProfil.SetAbsoluteAxisData(arr);
         }
 
-        public void ErzeugeProfil(Double b, Double h)
+                public void ErzeugeProfil(Double b, Double h)
         {
             // Skizze umbenennen
             hsp_catiaProfil.set_Name("Rechteck");
@@ -132,7 +132,7 @@ namespace Sprint2
         }
 
 
-        public void ErzeugeZahnrad(int Zaehnezahl, double Dicke)
+        public void ErzeugeZahnrad(int Zaehnezahl, double Dicke, double Modul)
         {
             ShapeFactory SF = (ShapeFactory)hsp_catiaPart.Part.ShapeFactory;
             HybridShapeFactory HSF = (HybridShapeFactory)hsp_catiaPart.Part.HybridShapeFactory; Part myPart = hsp_catiaPart.Part;

@@ -10,7 +10,7 @@ namespace Sprint2
 {
     public class CatiaObj
     {
-        public CatiaObj(int z, double b)
+        public CatiaObj(int z, double b, double m)
         {
             try
             {
@@ -37,7 +37,7 @@ namespace Sprint2
                     // Extrudiere Balken
                     //cc.ErzeugeBalken(300);
                     //Console.WriteLine("4");
-                    cc.ErzeugeZahnrad(z, b);
+                    cc.ErzeugeZahnrad(z, b, m);
                 }
                 else
                 {
