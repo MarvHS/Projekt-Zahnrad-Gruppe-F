@@ -154,7 +154,7 @@ namespace Sprint2
 
         private void btn_Catia_Click(object sender, RoutedEventArgs e)
         {
-            CatiaObj c = new CatiaObj((int)z, b, m);
+            CatiaObj ccc = new CatiaObj((int)z, b, m, p, c, df, hf, h, ha ,da );
         }
         }
             
