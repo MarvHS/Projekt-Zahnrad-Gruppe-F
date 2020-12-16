@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Sprint2
+namespace Sprint3
+
 {
     public class CatiaObj
     {
@@ -15,7 +16,7 @@ namespace Sprint2
             try
             {
 
-                CatiaConnection cc = new CatiaConnection();
+                Sprint2.CatiaConnection cc = new CatiaConnection();
 
                 // Finde Catia Prozess
                 if (cc.CATIALaeuft())
@@ -31,7 +32,7 @@ namespace Sprint2
                     Console.WriteLine("2");
 
                     // Generiere ein Profil
-                    //cc.ErzeugeProfil(20, 10);
+                   cc.ErzeugeProfil(20, 10);
                     //Console.WriteLine("3");
 
                     // Extrudiere Balken
