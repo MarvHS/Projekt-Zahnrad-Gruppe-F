@@ -76,39 +76,51 @@ namespace Sprint2
             hsp_catiaProfil.SetAbsoluteAxisData(arr);
         }
 
-                public void ErzeugeProfil(Double b, Double h)
+                public void ErzeugeProfil(int z, double b, double m, double p, double c, double df, double hf, double h, double ha, double da)
         {
-            // Skizze umbenennen
-            hsp_catiaProfil.set_Name("Rechteck");
+          
+            //                                                Punkte
+            //Nullpunkte
+            double x0 = 0;
+            double y0 = 0;
+            double radius =20;
+            
+            //Startpunkte
+            double StartPkt_Fußkreis_x = x0;
+            double StartPkt_Fußkreis_y = df/2;
+            double StartPkt_Kopfkreis_x = x0;
+            double StartPkt_Kopfkreis_y = da/2;
+            //Endpunkte
+            double EndPkt_Kopfkreis_x = p/2;
+            double EndPkt_Kopfkreis_y = da/2;
+            double EndPkt_Fußkreis_x =  p/2;
+            double EndPkt_Fußkreis_y = df/2;
+            //Winkelpunkt
+            double Alpha = z / 2 * Math.PI;
+            double EndPkt_Radius_x = Math.Sin (90 * Math.PI/180 - Alpha) * df/2;
+            double EndPkt_Radius_y = Math.Cos (90 * Math.PI/180 - Alpha) * df/2;
 
-            // Rechteck in Skizze einzeichnen
-            // Skizze oeffnen
-            Factory2D catFactory2D1 = hsp_catiaProfil.OpenEdition();
+          
 
-            // Rechteck erzeugen
+            Factory2D catFactory2D1 =hsp_catiaProfil.OpenEdition();
 
-            // erst die Punkte
-            Point2D catPoint2D1 = catFactory2D1.CreatePoint(-50, 50);
-            Point2D catPoint2D2 = catFactory2D1.CreatePoint(50, 50);
-            Point2D catPoint2D3 = catFactory2D1.CreatePoint(50, -50);
-            Point2D catPoint2D4 = catFactory2D1.CreatePoint(-50, -50);
+            Point2D catP2D_MPkt_Radius = catFactory2D1.CreatePoint(x0, y0 );
+            
+            Point2D catP2D_StartPkt_Fußkreis = catFactory2D1.CreatePoint(StartPkt_Fußkreis_x, StartPkt_Fußkreis_y);
+            Point2D catP2D_StartPkt_Kopfkreis = catFactory2D1.CreatePoint(StartPkt_Kopfkreis_x, StartPkt_Kopfkreis_y);
+            Point2D catP2D_EndPkt_Kopfkreis = catFactory2D1.CreatePoint(EndPkt_Kopfkreis_x, EndPkt_Kopfkreis_y);
+            Point2D catP2D_EndPkt_Fußkreis = catFactory2D1.CreatePoint(EndPkt_Fußkreis_x, EndPkt_Fußkreis_y);
+            Point2D catP2D_EndPkt_Radius = catFactory2D1.CreatePoint(EndPkt_Radius_x, EndPkt_Radius_y );
+          
 
-            // dann die Linien
-            Line2D catLine2D1 = catFactory2D1.CreateLine(-50, 50, 50, 50);
-            catLine2D1.StartPoint = catPoint2D1;
-            catLine2D1.EndPoint = catPoint2D2;
+             //                                               Linien
 
-            Line2D catLine2D2 = catFactory2D1.CreateLine(50, 50, 50, -50);
-            catLine2D2.StartPoint = catPoint2D2;
-            catLine2D2.EndPoint = catPoint2D3;
+            Line2D catLine2D1 = catFactory2D1.CreateLine(StartPkt_Fußkreis_x, StartPkt_Fußkreis_y, StartPkt_Kopfkreis_x, StartPkt_Kopfkreis_y );
+            Line2D catLine2D2 = catFactory2D1.CreateLine(StartPkt_Kopfkreis_x, StartPkt_Kopfkreis_y, EndPkt_Kopfkreis_x, EndPkt_Kopfkreis_y);
+            Line2D catLine2D3 = catFactory2D1.CreateLine(EndPkt_Kopfkreis_x, EndPkt_Kopfkreis_y, EndPkt_Fußkreis_x, EndPkt_Fußkreis_y);
+          //  Line2D catLine2D4 = catFactory2D1.CreateLine(EndPkt_Fußkreis_x, EndPkt_Fußkreis_y,EndPkt_Radius_x, EndPkt_Radius_y);
 
-            Line2D catLine2D3 = catFactory2D1.CreateLine(50, -50, -50, -50);
-            catLine2D3.StartPoint = catPoint2D3;
-            catLine2D3.EndPoint = catPoint2D4;
-
-            Line2D catLine2D4 = catFactory2D1.CreateLine(-50, -50, -50, 50);
-            catLine2D4.StartPoint = catPoint2D4;
-            catLine2D4.EndPoint = catPoint2D1;
+             Circle2D catC2D_Fußkreis = catFactory2D1.CreateCircle(catP2D_MPkt_Radius,radius);
 
             // Skizzierer verlassen
             hsp_catiaProfil.CloseEdition();
@@ -138,6 +150,8 @@ namespace Sprint2
             ShapeFactory SF = (ShapeFactory)hsp_catiaPart.Part.ShapeFactory;
             HybridShapeFactory HSF = (HybridShapeFactory)hsp_catiaPart.Part.HybridShapeFactory; Part myPart = hsp_catiaPart.Part;
             Factory2D Factory2D1 = hsp_catiaProfil.Factory2D;
+
+
             HybridShapePointCoord Ursprung = HSF.AddNewPointCoord(0, 0, 0);
             Reference RefUrsprung = myPart.CreateReferenceFromObject(Ursprung);
             HybridShapeDirection XDir = HSF.AddNewDirectionByCoord(1, 0, 0);
