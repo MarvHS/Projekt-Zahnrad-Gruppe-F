@@ -70,6 +70,7 @@
                     </ComboBox>
                     <TextBlock HorizontalAlignment="Left" Margin="157,122,0,0" Text="mm" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-2.66,0.667" Grid.Column="4"/>
                     <Label x:Name="lbl_Überschrift" Content="Zahnradkonfigurator" Grid.ColumnSpan="5" HorizontalAlignment="Left" Height="50" Margin="7,10,0,0" VerticalAlignment="Top" Width="157" FontWeight="Bold" FontStyle="Normal" FontFamily="Arial Black"/>
+<<<<<<< Updated upstream
                     <Button x:Name="btn_Catia" Content="Catia" Grid.Column="4" Margin="0,0,181,10" Grid.ColumnSpan="3" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="btn_Catia_Click">
                         <Button.Background>
                             <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
@@ -77,6 +78,9 @@
                     </Button>
                     <Label x:Name="textblock_Kopfkreisdurchmesser_Copy" Content="Modul(m):" Grid.ColumnSpan="3" Grid.Column="4" HorizontalAlignment="Left" Height="35" Margin="214,295,0,0" VerticalAlignment="Top" Width="151"/>
                     <TextBox x:Name="m1" Grid.Column="6" Margin="0,302,60,0" TextWrapping="Wrap" IsEnabled="False" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100"/>
+=======
+                    <Button Content="Catia Anbindung " Grid.Column="4" HorizontalAlignment="Left" Height="30" Margin="14,320,0,0" VerticalAlignment="Top" Width="109"/>
+>>>>>>> Stashed changes
 
                 </Grid>
 

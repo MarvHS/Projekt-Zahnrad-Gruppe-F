@@ -45,9 +45,15 @@ namespace Sprint2
             // Kontrolle auf Zahlen größer Null
             if (z_test <= 0)
             {
+<<<<<<< Updated upstream
                 MessageBox.Show("Der Wert 'z' muss größer Null sein!", "Ungültige Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
                 z1.Focus();
                 z1.SelectAll();
+=======
+                MessageBox.Show("Der Wert 'z oder m' muss größer Null sein!", "Ungültige Eingabe", MessageBoxButton.OK, MessageBoxImage.Error);
+                z1_m1.Focus();
+                z1_m1.SelectAll();
+>>>>>>> Stashed changes
             }
 
 
@@ -111,7 +117,7 @@ namespace Sprint2
         }
 
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
+        { 
 
         }
 
@@ -128,10 +134,10 @@ namespace Sprint2
         private void z1_TextChanged(object sender, TextChangedEventArgs e)
         {
 
-
         }
+    }
 
-        private void txtblock_Zähnezahl_MouseEnter(object sender, MouseEventArgs e)
+    private void txtblock_Zähnezahl_MouseEnter(object sender, MouseEventArgs e)
         {
 
         }
