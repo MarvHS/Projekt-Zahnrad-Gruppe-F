@@ -1,0 +1,89 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="BildFormeln.PNG" />
+    <None Remove="Formelbild.PNG" />
+    <None Remove="istockphoto-937855500-612x612.jpg" />
+    <None Remove="Logo.PNG" />
+    <None Remove="Ritzel-Zahnrad-Z17-Modul-4-Innendurchmesser-22mm-.1874a.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Excel.dll">
+      <Guid>00020813-0000-0000-c000-000000000046</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+    </COMReference>
+    <COMReference Include="CATIA_APP_ITF.dll">
+      <Guid>3d8d0a2a-f2b0-11d4-a3aa-00d0b756ad5d</Guid>
+      <VersionMajor>0</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+    </COMReference>
+    <COMReference Include="ActiveDs.dll">
+      <Guid>97d25db0-0363-11cf-abc4-02608c9e7553</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+    </COMReference>
+    <COMReference Include="NETWORKLIST.dll">
+      <Guid>dcb00d01-570f-4a9b-8d69-199fdba5723b</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+    </COMReference>
+    <COMReference Include="AECRTypeLib.dll">
+      <Guid>85cc1867-b083-0000-0280-020cc2000000</Guid>
+      <VersionMajor>0</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Interop.HybridShapeTypeLib">
+      <HintPath>..\..\CATIAV5 Verweise Zahnrad\Interop.HybridShapeTypeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.INFITF">
+      <HintPath>..\..\CATIAV5 Verweise Zahnrad\Interop.INFITF.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.KnowledgewareTypeLib">
+      <HintPath>..\..\CATIAV5 Verweise Zahnrad\Interop.KnowledgewareTypeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.MECMOD">
+      <HintPath>..\..\CATIAV5 Verweise Zahnrad\Interop.MECMOD.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.PARTITF">
+      <HintPath>..\..\CATIAV5 Verweise Zahnrad\Interop.PARTITF.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.ProductStructureTypeLib">
+      <HintPath>..\..\CATIAV5 Verweise Zahnrad\Interop.ProductStructureTypeLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="BildFormeln.PNG" />
+    <Resource Include="Formelbild.PNG" />
+    <Resource Include="istockphoto-937855500-612x612.jpg" />
+    <Resource Include="Logo.PNG" />
+    <Resource Include="Ritzel-Zahnrad-Z17-Modul-4-Innendurchmesser-22mm-.1874a.jpg" />
+  </ItemGroup>
+
+</Project>
